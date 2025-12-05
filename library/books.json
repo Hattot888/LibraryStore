@@ -1,0 +1,193 @@
+[
+  {
+    "id": 1,
+    "title": "The Practical Programmer",
+    "author": "Andrew Hunt",
+    "genre": "Technology",
+    "price": 29.99,
+    "cover": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500&q=60",
+    "description": "Practical tips and best practices for modern software development.",
+    "rating": 4.6
+  },
+  {
+    "id": 2,
+    "title": "Quiet Impact",
+    "author": "Susan North",
+    "genre": "Self-Help",
+    "price": 16.5,
+    "cover": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&q=60",
+    "description": "Small, consistent changes that lead to meaningful improvements in life.",
+    "rating": 4.2
+  },
+  {
+    "id": 3,
+    "title": "A Walk Through History",
+    "author": "Marcus L.",
+    "genre": "History",
+    "price": 22.0,
+    "cover": "https://images.unsplash.com/photo-1526318472351-c75fcf0707e6?w=500&q=60",
+    "description": "A concise and engaging exploration of pivotal moments in world history.",
+    "rating": 4.4
+  },
+  {
+    "id": 4,
+    "title": "Modern Design Patterns",
+    "author": "Elena Voss",
+    "genre": "Technology",
+    "price": 34.0,
+    "cover": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500&q=60",
+    "description": "An approachable guide to design patterns with practical examples.",
+    "rating": 4.7
+  },
+  {
+    "id": 5,
+    "title": "Culinary Journeys",
+    "author": "R. Patel",
+    "genre": "Cooking",
+    "price": 18.99,
+    "cover": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=60",
+    "description": "Recipes and stories from kitchens around the world.",
+    "rating": 4.1
+  },
+  {
+    "id": 6,
+    "title": "Mindful Minutes",
+    "author": "Hannah Lee",
+    "genre": "Wellness",
+    "price": 12.0,
+    "cover": "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?w=500&q=60",
+    "description": "Short mindfulness practices to reduce stress and improve focus.",
+    "rating": 4.3
+  },
+  {
+    "id": 7,
+    "title": "The Art of Negotiation",
+    "author": "Daniel Flores",
+    "genre": "Business",
+    "price": 24.5,
+    "cover": "https://images.unsplash.com/photo-1508385082359-fc2b2b3b0b6e?w=500&q=60",
+    "description": "Techniques and strategies to negotiate better outcomes in work and life.",
+    "rating": 4.5
+  },
+  {
+    "id": 8,
+    "title": "Gardening for Beginners",
+    "author": "L. Martin",
+    "genre": "Hobby",
+    "price": 14.0,
+    "cover": "https://images.unsplash.com/photo-1453227588063-bb3024b19b38?w=500&q=60",
+    "description": "A friendly introduction to starting and maintaining a home garden.",
+    "rating": 4.0
+  },
+  {
+    "id": 9,
+    "title": "Little Stories of Science",
+    "author": "D. Rios",
+    "genre": "Science",
+    "price": 19.5,
+    "cover": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=500&q=60",
+    "description": "Engaging essays that bring scientific ideas to a broad audience.",
+    "rating": 4.2
+  },
+  {
+    "id": 10,
+    "title": "Creative Writing Workshop",
+    "author": "Maya Thompson",
+    "genre": "Writing",
+    "price": 21.0,
+    "cover": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=500&q=60",
+    "description": "Exercises and prompts to develop your voice as a writer.",
+    "rating": 4.4
+  },
+  {
+    "id": 11,
+    "title": "Introduction to Astronomy",
+    "author": "K. Alvarez",
+    "genre": "Science",
+    "price": 27.0,
+    "cover": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=500&q=60",
+    "description": "A clear and illustrated primer on stars, planets, and cosmology.",
+    "rating": 4.6
+  },
+  {
+    "id": 12,
+    "title": "Urban Sketching",
+    "author": "P. Nguyen",
+    "genre": "Art",
+    "price": 17.5,
+    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=500&q=60",
+    "description": "Techniques for drawing lively scenes from city life.",
+    "rating": 4.1
+  },
+  {
+    "id": 13,
+    "title": "Pragmatic Tools",
+    "author": "Andrew Hunt",
+    "genre": "Technology",
+    "price": 25.0,
+    "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=60",
+    "description": "Handy tools and workflows to make development day-to-day more efficient.",
+    "rating": 4.5
+  },
+  {
+    "id": 14,
+    "title": "Advanced Patterns",
+    "author": "Elena Voss",
+    "genre": "Technology",
+    "price": 39.0,
+    "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&q=60",
+    "description": "Deeper exploration of architecture and design patterns for scalable systems.",
+    "rating": 4.8
+  },
+  {
+    "id": 15,
+    "title": "Street Food of India",
+    "author": "R. Patel",
+    "genre": "Cooking",
+    "price": 20.0,
+    "cover": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&q=60",
+    "description": "A flavorful tour of popular street recipes and their stories.",
+    "rating": 4.3
+  },
+  {
+    "id": 16,
+    "title": "Mindful Eating",
+    "author": "Hannah Lee",
+    "genre": "Wellness",
+    "price": 13.0,
+    "cover": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500&q=60",
+    "description": "Practical guidance on eating with attention and gratitude.",
+    "rating": 4.2
+  },
+  {
+    "id": 17,
+    "title": "Negotiation in Practice",
+    "author": "Daniel Flores",
+    "genre": "Business",
+    "price": 26.0,
+    "cover": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&q=60",
+    "description": "Real-world negotiation scenarios and step-by-step tactics.",
+    "rating": 4.4
+  },
+  {
+    "id": 18,
+    "title": "Writing Short Stories",
+    "author": "Maya Thompson",
+    "genre": "Writing",
+    "price": 18.0,
+    "cover": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=500&q=60",
+    "description": "Techniques and exercises to craft compelling short fiction.",
+    "rating": 4.5
+  },
+  {
+    "id": 19,
+    "title": "Science in Everyday Life",
+    "author": "D. Rios",
+    "genre": "Science",
+    "price": 17.0,
+    "cover": "https://images.unsplash.com/photo-1503264116251-35a269479413?w=500&q=60",
+    "description": "How scientific principles explain common daily phenomena.",
+    "rating": 4.0
+  }
+]
+

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interactive Bookstore</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">📚</div>
+        <h1>BookHive</h1>
+      </div>
+      <nav class="side-nav">
+        <a class="active" data-section="browse" href="#"><i class="fa-solid fa-book"></i> Library</a>
+        <a data-section="cart" href="#"><i class="fa-solid fa-cart-shopping"></i> Cart <span class="badge"
+            id="cart-count">0</span></a>
+        <a data-section="manage" href="#"><i class="fa-solid fa-database"></i> Manage Books</a>
+        <a data-section="about" href="#"><i class="fa-solid fa-circle-info"></i> About</a>
+      </nav>
+      <div class="sidebar-footer">
+        <small>Made for demo</small>
+      </div>
+    </aside>
+
+    <main class="main-card">
+      <header class="topbar">
+        <div class="left-controls">
+          <ul class="genres" id="genre-list"></ul>
+        </div>
+
+        <div class="search-area">
+          <input type="search" id="search" placeholder="Search books, authors..." />
+          <button id="search-clear" title="Clear"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="user-area">
+          <button id="export-json" class="btn small">Export JSON</button>
+          <div class="avatar">AH</div>
+        </div>
+      </header>
+      <!-- herer -->
+       <section class="hero">
+        <img class="hero-bg" src="./librar.jpg" alt="Library shelves" loading="lazy" onerror="this.style.display='none'" />
+        <div class="hero-content">
+            <h1>Transform Your Life Through Education</h1>
+            <p>Knowledge is the best investment you can make for your future.</p>
+
+        </div>
+    </section>
+    <!-- to here -->
+
+      <section class="content">
+        <div class="left-panel">
+          <h2>Featured books</h2>
+          <div id="featured-row" class="featured-row"></div>
+
+          <h3>All books</h3>
+          <div id="books-grid" class="books-grid"></div>
+
+          <div class="pagination" id="pagination"></div>
+        </div>
+
+        <aside class="right-panel">
+          <div class="card widget">
+            <h4>Popular books</h4>
+            <div id="popular-list"></div>
+            <button class="btn" id="show-all-popular" class="link-like">Show all</button>
+          </div>
+
+          <div class="card widget">
+            <h4>Writers & Authors</h4>
+            <div id="authors-list"></div>
+          </div>
+
+          <div class="card widget">
+            <h4>Special</h4>
+            <div class="special">Season picks & top rated</div>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <!-- Reusable Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="close-modal" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Manage Books Modal -->
+  <div id="manage-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="close-modal" id="close-manage"><i class="fa-solid fa-xmark"></i></button>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="width:36%;max-width:320px;padding-right:8px">
+          <h3>Books</h3>
+          <div id="manage-list" style="max-height:60vh;overflow:auto"></div>
+          <button id="manage-new" class="btn small" style="margin-top:8px">New Book</button>
+        </div>
+        <div style="flex:1">
+          <h3 id="manage-title">Edit Book</h3>
+          <form id="manage-form">
+            <input type="hidden" name="id" />
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <input name="title" placeholder="Title" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)" />
+              <input name="author" placeholder="Author" style="width:200px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)" />
+            </div>
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <input name="genre" placeholder="Genre" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)" />
+              <input name="price" placeholder="Price" type="number" step="0.01" style="width:120px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)" />
+            </div>
+            <div style="margin-bottom:8px">
+              <input name="cover" placeholder="Cover URL" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)" />
+            </div>
+            <div style="margin-bottom:12px">
+              <textarea name="description" placeholder="Description" rows="5" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)"></textarea>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button type="submit" class="btn">Save</button>
+              <button type="button" id="delete-book" class="btn danger" style="display:none">Delete</button>
+              <button type="button" id="cancel-manage" class="btn small btn-muted" style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
