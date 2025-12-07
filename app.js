@@ -21,14 +21,20 @@ function loadInitialBooks(){
     state.books = JSON.parse(local);
     initAfterBooks();
   } else {
-    $.getJSON(BOOKS_JSON).done(data => {
-      state.books = data;
-      initAfterBooks();
-    }).fail(err=>{
-      console.error('Failed loading books.json.',err);
-      state.books = [];
-      initAfterBooks();
-    })
+    $.ajax({
+      url: BOOKS_JSON,
+      method: 'GET',
+      dataType: 'json',
+      success: function(data){
+        state.books = data;
+        initAfterBooks();
+      },
+      error: function(xhr, status, err){
+        console.error('Failed loading books.json.', err);
+        state.books = [];
+        initAfterBooks();
+      }
+    });
   }
 }
 
@@ -41,7 +47,7 @@ function initAfterBooks(){
 }
 
 // Helper to set cover with preload + fallback
-const _placeholderCover = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600"><rect width="100%" height="100%" fill="%230b2b28"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23a8c2bf" font-family="Arial,Helvetica,sans-serif" font-size="24">No Image</text></svg>';
+const _placeholderCover = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600"><rect width="100%" height="100%" fill="%230b2b28"/><text x="50%" y="50%" dominant-ba[...]
 function setCover($el, url){
   if(!url){
     $el.css('background-image', `url("${_placeholderCover}")`);
